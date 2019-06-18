@@ -1,7 +1,7 @@
 function loadJSONFromExcelFile(filePageLink) {
 	var fileData = '';
     $.ajax({
-        url: '../catering/' + eventId + '.txt',
+        url: filePageLink,
         type: "get",
         async: false,
         success: function(data) {
