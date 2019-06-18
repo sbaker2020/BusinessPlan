@@ -54,18 +54,24 @@
         <p>&copy; Bon Merchánt 2019</p>
       </div>
     </footer>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/xlsx.full.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.3/jquery.csv.min.js"></script>
 	<script>
 		$( document ).ready(function() {
-			$.get('homepage.xlsx', function(data) {
-			   console.log(data);
-			}, 'binary');
+			$.ajax({
+				url: "homepage.csv",
+				async: false,
+				success: function (csvd) {
+					var items = $.csv.toObjects(csvd);
+					var jsonobject = JSON.stringify(items);
+					console.log(jsonobject);
+				},
+				dataType: "text",
+				complete: function () {
+					// call a function on complete 
+				}
+			});
 			
-			var xlsxWorkbook = XLSX.readFile(window.location.href + '/../homepage.xlsx');
-			var sheetNames = xlsxWorkbook.SheetNames;
-			console.log(XLSX.utils.sheet_to_json(xlsxWorkbook.Sheets[sheetNames[0]]))
 		});
 	</script>
   </body>
