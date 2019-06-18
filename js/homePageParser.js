@@ -5,5 +5,5 @@ function loadJSONFromExcelFile(filePageLink) {
 }
 
 $( document ).ready(function() {
-	loadJSONFromExcelFile("data/homepage.xlsx");
+	loadJSONFromExcelFile("../data/homepage.xlsx");
 });
