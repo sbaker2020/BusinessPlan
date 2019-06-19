@@ -43,7 +43,7 @@
       </section>
       <div class="album py-5 bg-light">
         <div class="container">
-          <div class="row">
+          <div id="drinkListRow" class="row">
             
           </div>
         </div>
@@ -58,20 +58,41 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.3/jquery.csv.min.js"></script>
 	<script>
 		$( document ).ready(function() {
+		    htmlTemplate = '';
 			$.ajax({
-				url: "homepage.csv",
+				url: 'homePageItemTemplate.txt',
+				type: "get",
 				async: false,
-				success: function (csvd) {
-					var items = $.csv.toObjects(csvd);
-					var jsonobject = JSON.stringify(items);
-					console.log(jsonobject);
+				success: function(data) {
+					htmlTemplate = data.replace('\n', '');
 				},
-				dataType: "text",
-				complete: function () {
-					// call a function on complete 
+				error: function() {
+					console.log('Could not load event data');
 				}
 			});
 			
+			drinkList = '';
+			$.ajax({
+				url: "homepage.csv",
+				async: false,
+				success: function (csvData) {
+					drinkList = JSON.stringify($.csv.toObjects(csvData));
+				},
+				dataType: "text"
+			});
+			
+			drinkListHtml = '';
+			for(var drink in drinkList) {
+				generatedHtml += htmlTemplate;
+				generatedHtml = generatedHtml.replace('{pageLink}', drink.pageLink);
+				generatedHtml = generatedHtml.replace('{drinkName}', drink.drinkName);
+				generatedHtml = generatedHtml.replace('{imageLink}', drink.imageLink);
+				generatedHtml = generatedHtml.replace('{description}', drink.description);
+				generatedHtml = generatedHtml.replace('{smallDescription}', drink.smallDescription);
+				drinkListHtml += generatedHtml;
+			}
+			
+			document.getElementById('drinkListRow').innerHTML = drinkListHtml;
 		});
 	</script>
   </body>
