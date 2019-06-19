@@ -76,7 +76,7 @@
 				url: "homepage.csv",
 				async: false,
 				success: function (csvData) {
-					drinkList = JSON.stringify($.csv.toObjects(csvData));
+					drinkList = JSON.parse($.csv.toObjects(csvData));
 				},
 				dataType: "text"
 			});
