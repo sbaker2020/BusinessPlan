@@ -63,8 +63,15 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.3/jquery.csv.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 	<script>
+		function getUrlParameter(name) {
+			name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+			var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+			var results = regex.exec(location.search);
+			return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+		};
+		
 		$( document ).ready(function() {
-		    drink = $.cookie(cocktail.drinkName);
+		    cocktail = $.cookie(getUrlParameter('drinkName'));
 			
 			htmlTemplate = '';
 			$.ajax({

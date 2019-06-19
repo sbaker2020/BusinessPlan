@@ -97,7 +97,7 @@
 				generatedHtml += htmlTemplate;
 				generatedHtml = generatedHtml.replace('{drinkName}', cocktail.drinkName);
 				generatedHtml = generatedHtml.replace('{drinkPrice}', cocktail.drinkPrice);
-				generatedHtml = generatedHtml.replace('{imageLink}', cocktail.imageLink);
+				generatedHtml = generatedHtml.replace('{imageLink}', cocktail.imageLink + "?drinkName=" + cocktail.drinkName);
 				cocktailsListHtml += generatedHtml;
 			}
 			
