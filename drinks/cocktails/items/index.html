@@ -91,9 +91,8 @@
 			generatedHtml = generatedHtml.replace('{drinkName}', cocktail.drinkName);
 			generatedHtml = generatedHtml.replace('{drinkPrice}', cocktail.drinkPrice);
 			generatedHtml = generatedHtml.replace('{imageLink}', cocktail.imageLink);
-			cocktailsListHtml += generatedHtml;
 			
-			document.getElementById('cocktailsListRow').innerHTML = cocktailsListHtml;
+			document.getElementById('cocktailsListRow').innerHTML = generatedHtml;
 			
 			document.getElementById('drinkName').innerHTML = drink.drinkName;
 			document.getElementById('description').innerHTML = drink.description;
