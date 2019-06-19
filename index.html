@@ -82,7 +82,9 @@
 			});
 			
 			drinkListHtml = '';
-			for(var drink in drinkList) {
+			for(var i = 0; i < drinkList.length; i++) {
+				drink = drinkList[i];
+			
 				generatedHtml = '';
 				generatedHtml += htmlTemplate;
 				console.log(drink);
