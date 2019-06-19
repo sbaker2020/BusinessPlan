@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Bon Merchánt</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+	  .drinkItem {
+	    padding-top: 2.5%;
+		padding-bottom: 2.5%;
+	  }
+	  
+      .bd-placeholder-img {
+		  font-size: 1.125rem;
+		  text-anchor: middle;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		  }
+		  @media (min-width: 768px) {
+		  .bd-placeholder-img-lg {
+		  font-size: 3.5rem;
+		  }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container d-flex justify-content-between">
+          <a href="#" class="navbar-brand d-flex align-items-center">
+          <strong>Bon Merchánt</strong>
+          </a>
+        </div>
+      </div>
+    </header>
+    <main role="main">
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Wine List</h1>
+          <p class="lead text-muted">Description here if needed</p>
+        </div>
+      </section>
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <div id="wineListRow" class="row">
+            
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="text-muted">
+      <div class="container">
+        <p>&copy; Bon Merchánt 2019</p>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.3/jquery.csv.min.js"></script>
+	<script>
+		$( document ).ready(function() {
+		    htmlTemplate = '';
+			$.ajax({
+				url: 'wineItemTemplate.txt',
+				type: "get",
+				async: false,
+				success: function(data) {
+					htmlTemplate = data.replace('\n', '');
+				},
+				error: function() {
+					console.log('Could not load event data');
+				}
+			});
+			
+			wineList = null;
+			$.ajax({
+				url: "wine.csv",
+				async: false,
+				success: function (csvData) {
+					wineList = $.csv.toObjects(csvData);
+				},
+				dataType: "text"
+			});
+			
+			drinkListHtml = '';
+			for(var i = 0; i < wineList.length; i++) {
+				wine = wineList[i];
+			
+				generatedHtml = '';
+				generatedHtml += htmlTemplate;
+				generatedHtml = generatedHtml.replace('{pageLink}', wine.pageLink);
+				generatedHtml = generatedHtml.replace('{drinkName}', wine.drinkName);
+				generatedHtml = generatedHtml.replace('{imageLink}', wine.imageLink);
+				generatedHtml = generatedHtml.replace('{description}', wine.description);
+				generatedHtml = generatedHtml.replace('{smallDescription}', wine.smallDescription);
+				drinkListHtml += generatedHtml;
+			}
+			
+			document.getElementById('wineListRow').innerHTML = drinkListHtml;
+		});
+	</script>
+  </body>
+</html>
