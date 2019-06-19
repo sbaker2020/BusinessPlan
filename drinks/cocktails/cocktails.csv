@@ -1,7 +1,7 @@
-drinkName	drinkPrice	imageLink	description
-Spritz	$12 	/images/spritz.png	Soixante Quinze S'il vous plaît! This french cocktail is made with Bombay Sapphire gin&comma; champagne&comma; lemon juice&comma; and sugar - and is said to have such a kick that it felt like being shelled with the French 75mm field gun. Dating back to WW1&comma; this cocktail is a french icon. An early form was created in 1915 at the NY Bar in Paris&comma; also known as “ the most famous cocktail bar in Parisian History.
-Mojito	$12 	/images/mojito.png	
-Moscow Mule	$13 	/images/moscowMule.png	
-The French Tart	$15 	/images/frenchTart.png	
-Martini	$14 	/images/martini.png	
-Cosmopolitan	$13 	/images/cosmopolitan.png	
+drinkName,drinkPrice,imageLink,description
+Spritz,$12,/images/spritz.png,Soixante Quinze S'il vous plaît! This french cocktail is made with Bombay Sapphire gin&comma; champagne&comma; lemon juice&comma; and sugar - and is said to have such a kick that it felt like being shelled with the French 75mm field gun. Dating back to WW1&comma; this cocktail is a french icon. An early form was created in 1915 at the NY Bar in Paris&comma; also known as “ the most famous cocktail bar in Parisian History.
+Mojito,$12,/images/mojito.png,
+Moscow Mule,$13,/images/moscowMule.png,
+The French Tart,$15,/images/frenchTart.png,
+Martini,$14,/images/martini.png,
+Cosmopolitan,$13,/images/cosmopolitan.png,
