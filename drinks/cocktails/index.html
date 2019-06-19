@@ -61,7 +61,7 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.3/jquery.csv.min.js"></script
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 	<script>
 		$( document ).ready(function() {
 		    htmlTemplate = '';
@@ -91,7 +91,7 @@
 			for(var i = 0; i < cocktailsList.length; i++) {
 				cocktail = cocktailsList[i];
 				
-				Cookies.set(cocktail.drinkName, cocktail);
+				$.cookie(cocktail.drinkName, cocktail);
 			
 				generatedHtml = '';
 				generatedHtml += htmlTemplate;
