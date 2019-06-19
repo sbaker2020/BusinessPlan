@@ -83,6 +83,7 @@
 			
 			drinkListHtml = '';
 			for(var drink in drinkList) {
+				generatedHtml = '';
 				generatedHtml += htmlTemplate;
 				generatedHtml = generatedHtml.replace('{pageLink}', drink.pageLink);
 				generatedHtml = generatedHtml.replace('{drinkName}', drink.drinkName);
