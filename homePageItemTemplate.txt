@@ -1,4 +1,4 @@
-<div class="col-md-12">
+<div class="col-md-12 drinkItem">
   <div class="card mb-12 shadow-sm">
 	<a href="{pageLink}"><img alt="{drinkName}" src="{imageLink}" class="card-img-top img-fluid" /></a>
 	<div class="card-body">
@@ -9,4 +9,3 @@
 	</div>
   </div>
 </div>
-<br />
