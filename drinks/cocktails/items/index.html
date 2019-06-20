@@ -71,9 +71,11 @@
 		};
 		
 		$( document ).ready(function() {
-		    cocktail = $.cookie(getUrlParameter('drinkName'));
+		    cocktailData = $.cookie(getUrlParameter('drinkName'));
+			cocktail = JSON.parse(cocktailData);
+			
 			console.log(getUrlParameter('drinkName'));
-			console.log(JSON.stringify(cocktail));
+			console.log(cocktail);
 			console.log(cocktail.drinkPrice);
 			
 			htmlTemplate = '';
