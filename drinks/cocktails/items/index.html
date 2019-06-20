@@ -74,10 +74,6 @@
 		    cocktailData = $.cookie(getUrlParameter('drinkName'));
 			cocktail = JSON.parse(cocktailData);
 			
-			console.log(getUrlParameter('drinkName'));
-			console.log(cocktail);
-			console.log(cocktail.drinkPrice);
-			
 			htmlTemplate = '';
 			$.ajax({
 				url: 'cocktailsItemTemplate.txt',
