@@ -1,11 +1,8 @@
 <div class="col-md-12 drinkItem">
   <div class="card mb-12 shadow-sm">
-	<a href="{pageLink}"><img alt="{drinkName}" src="{imageLink}" class="card-img-top img-fluid" /></a>
 	<div class="card-body">
+	  <h5 class="card-title">{drinkName}</h5>
 	  <p class="card-text">{description}</p>
-	  <div class="d-flex justify-content-between align-items-center">
-		<small class="text-muted">{smallDescription}</small>
-	  </div>
 	</div>
   </div>
 </div>
