@@ -1,0 +1,11 @@
+<div class="col-md-4 drinkItem">
+  <div class="card mb-4 shadow-sm">
+	<a href="items?drinkName={drinkName}"><img alt="{drinkName}" src="{imageLink}" class="card-img-top img-fluid" /></a>
+	<div class="card-body">
+	  <p class="card-text">{drinkName}</p>
+	  <div class="d-flex justify-content-between align-items-center">
+		<small class="text-muted">{drinkPrice}</small>
+	  </div>
+	</div>
+  </div>
+</div>

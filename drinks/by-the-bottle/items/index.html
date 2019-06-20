@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Bon Merchánt - Cocktails</title>
+    <title>Bon Merchánt - By The Bottle</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
 	  .drinkItem {
@@ -48,7 +48,7 @@
       </section>
       <div class="album py-5 bg-light">
         <div class="container">
-          <div id="cocktailsListRow" class="row">
+          <div id="bottlesListRow" class="row">
             
           </div>
         </div>
@@ -71,12 +71,12 @@
 		};
 		
 		$( document ).ready(function() {
-		    cocktailData = $.cookie(getUrlParameter('drinkName'));
-			cocktail = JSON.parse(cocktailData);
+		    bottleData = $.cookie(getUrlParameter('drinkName'));
+			bottle = JSON.parse(bottleData);
 			
 			htmlTemplate = '';
 			$.ajax({
-				url: 'cocktailsItemTemplate.txt',
+				url: 'byTheBottleItemTemplate.txt',
 				type: "get",
 				async: false,
 				success: function(data) {
@@ -89,14 +89,14 @@
 			
 			generatedHtml = '';
 			generatedHtml += htmlTemplate;
-			generatedHtml = generatedHtml.replace('{drinkName}', cocktail.drinkName);
-			generatedHtml = generatedHtml.replace('{drinkPrice}', cocktail.drinkPrice);
-			generatedHtml = generatedHtml.replace('{imageLink}', cocktail.imageLink);
+			generatedHtml = generatedHtml.replace('{drinkName}', bottle.drinkName);
+			generatedHtml = generatedHtml.replace('{drinkPrice}', bottle.drinkPrice);
+			generatedHtml = generatedHtml.replace('{imageLink}', bottle.imageLink);
 			
-			document.getElementById('cocktailsListRow').innerHTML = generatedHtml;
+			document.getElementById('bottlesListRow').innerHTML = generatedHtml;
 			
-			document.getElementById('drinkName').innerHTML = cocktail.drinkName;
-			document.getElementById('description').innerHTML = cocktail.description;
+			document.getElementById('drinkName').innerHTML = bottle.drinkName;
+			document.getElementById('description').innerHTML = bottle.description;
 		});
 	</script>
   </body>
