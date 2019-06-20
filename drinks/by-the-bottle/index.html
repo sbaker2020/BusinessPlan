@@ -91,7 +91,7 @@
 			for(var i = 0; i < bottlesList.length; i++) {
 				bottle = bottlesList[i];
 				
-				$.cookie(bottle.drinkName, JSON.stringify(bottle));
+				$.cookie(bottle.itemId, JSON.stringify(bottle));
 			
 				generatedHtml = '';
 				generatedHtml += htmlTemplate;
