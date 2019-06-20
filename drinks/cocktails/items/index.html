@@ -73,7 +73,7 @@
 		$( document ).ready(function() {
 		    cocktail = $.cookie(getUrlParameter('drinkName'));
 			console.log(getUrlParameter('drinkName'));
-			console.log(cocktail);
+			console.log(JSON.stringify(cocktail));
 			console.log(cocktail.drinkPrice);
 			
 			htmlTemplate = '';
