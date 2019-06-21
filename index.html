@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Bon Merchánt</title>
+    <title>Bon Mechánt</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
 	  .drinkItem {
@@ -34,7 +34,7 @@
       <div class="navbar navbar-dark bg-dark shadow-sm">
         <div class="container d-flex justify-content-between">
           <a href="#" class="navbar-brand d-flex align-items-center">
-          <strong>Bon Merchánt</strong>
+          <strong>Bon Mechánt</strong>
           </a>
         </div>
       </div>
@@ -56,7 +56,11 @@
     </main>
     <footer class="text-muted">
       <div class="container">
-        <p>&copy; Bon Merchánt 2019</p>
+        <p>&copy; Bon Mechánt 
+		  <script>
+            document.write(new Date().getFullYear());
+          </script>
+		</p>
       </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -96,7 +100,6 @@
 				generatedHtml = generatedHtml.replace('{drinkName}', drink.drinkName);
 				generatedHtml = generatedHtml.replace('{imageLink}', drink.imageLink);
 				generatedHtml = generatedHtml.replace('{description}', drink.description);
-				generatedHtml = generatedHtml.replace('{smallDescription}', drink.smallDescription);
 				drinkListHtml += generatedHtml;
 			}
 			

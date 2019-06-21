@@ -2,7 +2,7 @@
   <div class="card mb-12 shadow-sm">
 	<div class="card-body">
 	  <h5 class="card-title">{drinkName}</h5>
-	  <p class="card-text">{description}</p>
+	  {description}
 	</div>
   </div>
 </div>

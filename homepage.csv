@@ -1,5 +1,5 @@
-drinkName,description,smallDescription,imageLink,pageLink
-Beer,beer sample description,beer sample description,images/beer.jpg,drinks/beer
-Wine,wine sample description,wine sample description,images/wine.jpg,drinks/wine
-By the Bottle,by the bottle sample description,by the bottle sample description,images/by-the-bottle.jpg,drinks/by-the-bottle
-Cocktails,cocktails sample description,cocktails sample description,images/cocktails.jpg,drinks/cocktails
+drinkName,description,imageLink,pageLink
+Beer,Beer,images/beer.jpg,drinks/beer
+Wine,By the Glass,images/wine.jpg,drinks/wine
+By the Bottle,By the Bottle,images/by-the-bottle.jpg,drinks/by-the-bottle
+Cocktails,Cocktails,images/cocktails.jpg,drinks/cocktails
