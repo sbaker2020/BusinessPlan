@@ -1,5 +1,5 @@
-<div class="col-md-4 drinkItem">
-  <div class="card mb-4 shadow-sm">
+<div class="col-md-3 drinkItem">
+  <div class="card mb-3 shadow-sm">
 	<a href="items?itemId={itemId}"><img alt="{drinkName}" src="{imageLink}" class="card-img-top img-fluid" /></a>
 	<div class="card-body">
 	  <p class="card-text">{drinkName}</p>
