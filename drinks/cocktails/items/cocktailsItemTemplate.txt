@@ -1,6 +1,6 @@
 <div class="col-md-12 drinkItem">
   <div class="card mb-12 shadow-sm">
-    <img alt="{drinkName}" src="../{imageLink}" class="card-img-top img-fluid" />
+    <img alt="{drinkName}" src="../{imageLink}" class="card-img-top img-fluid center-block interactiveImage" />
 	<div class="card-body">
 	  <div class="d-flex justify-content-between align-items-center">
 		<small class="text-muted">{drinkPrice}</small>
