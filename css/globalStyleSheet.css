@@ -21,3 +21,12 @@
 .interactiveImage {
 	width: 50%;
 }
+
+@font-face {
+	font-family: gentiumBasic;
+	src: url(GenBasR.ttf);
+}
+
+body {
+	font-family: gentiumBasic !important;
+}
